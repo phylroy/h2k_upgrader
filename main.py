@@ -21,6 +21,8 @@ print(*hse_list,  sep = "\n")
 hse_name = hse_list[0]
 app = Application().start("C:\HOT2000 v11.3\HOT2000.exe")
 app.HOT2000.menu_select("File->Open")
+
+#hardcoding input hse folder path for now.
 app.Open.Edit.type_keys("C:\\Users\\plopez\\PycharmProjects\\h2k_upgrader\\files_to_convert\\{}.HSE".format(hse_name))
 app.Open.Open.click()
 
@@ -31,6 +33,7 @@ time.sleep(5.0)
 # Hot 2000 dialog name has changed.
 new_name = "HOT2000 - [{} - General]".format(hse_name)
 app[new_name].menu_select("File->Save As")
+#hardcoding ouput h2k folder path for now.
 app.SaveAs.Edit.type_keys("C:\\Users\\plopez\\PycharmProjects\\h2k_upgrader\\converted_files\\{}.h2k".format(hse_name))
 app.SaveAs.Save.click()
 
